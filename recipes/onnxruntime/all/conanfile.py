@@ -26,11 +26,13 @@ class OnnxRuntimeConan(ConanFile):
         "shared": [True, False],
         "fPIC": [True, False],
         "with_xnnpack": [True, False],
+        "with_coreml": [True, False],
     }
     default_options = {
         "shared": False,
         "fPIC": True,
         "with_xnnpack": False,
+        "with_coreml": False,
     }
     short_paths = True
 
@@ -67,7 +69,7 @@ class OnnxRuntimeConan(ConanFile):
         self.requires("protobuf/3.21.9")
         self.requires("date/3.0.1")
         self.requires("re2/20230301")
-        self.requires("onnx/1.13.1")
+        self.requires("onnx/1.13.1@admin/stable")
         self.requires("flatbuffers/1.12.0")
         self.requires("boost/1.81.0", headers=True, libs=False, run=False)  # for mp11, header only, no need for libraries to link/run
         self.requires("safeint/3.0.28")
@@ -106,6 +108,7 @@ class OnnxRuntimeConan(ConanFile):
         tc.variables["onnxruntime_BUILD_SHARED_LIB"] = self.options.shared
         tc.variables["onnxruntime_USE_FULL_PROTOBUF"] = not self.dependencies["protobuf"].options.lite
         tc.variables["onnxruntime_USE_XNNPACK"] = self.options.with_xnnpack
+        tc.variables["onnxruntime_USE_COREML"] = self.options.with_coreml
 
         tc.variables["onnxruntime_BUILD_UNIT_TESTS"] = False
         tc.variables["onnxruntime_RUN_ONNX_TESTS"] = False
@@ -217,6 +220,11 @@ class OnnxRuntimeConan(ConanFile):
                 "common",
                 "flatbuffers",
             ]
+
+            if self.options.with_coreml:
+                onnxruntime_libs.append("providers_coreml")
+                self.cpp_info.includedirs.append("../../source/src/include/onnxruntime/core/providers/coreml")
+
             self.cpp_info.libs = [f"onnxruntime_{lib}" for lib in onnxruntime_libs]
 
         self.cpp_info.includedirs.append("include/onnxruntime/core/session")

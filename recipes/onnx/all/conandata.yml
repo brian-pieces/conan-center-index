@@ -3,8 +3,10 @@ sources:
     url: "https://github.com/onnx/onnx/archive/v1.14.0.tar.gz"
     sha256: "1b02ad523f79d83f9678c749d5a3f63f0bcd0934550d5e0d7b895f9a29320003"
   "1.13.1":
-    url: "https://github.com/onnx/onnx/archive/refs/tags/v1.13.1.tar.gz"
-    sha256: "090d3e10ec662a98a2a72f1bf053f793efc645824f0d4b779e0ce47468a0890e"
+    url: "https://storage.googleapis.com/pieces-ml-assets/rel-1.13.1-external.tar.gz"
+  #  "1.13.1":
+#    url: "https://github.com/onnx/onnx/archive/refs/tags/v1.13.1.tar.gz"
+#    sha256: "090d3e10ec662a98a2a72f1bf053f793efc645824f0d4b779e0ce47468a0890e"
   "1.12.0":
     url: "https://github.com/onnx/onnx/archive/refs/tags/v1.12.0.tar.gz"
     sha256: "052ad3d5dad358a33606e0fc89483f8150bb0655c99b12a43aa58b5b7f0cc507"
