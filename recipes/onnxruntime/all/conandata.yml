@@ -1,9 +1,9 @@
 sources:
-  "1.14.1":
-    url: "https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.14.1.tar.gz"
-    sha256: "f998352b131bb89fa7dd1f1d87ddbafe647dfaddd11929b6b5168b3f4ef857de"
+  "1.14.2":
+    url: "https://storage.googleapis.com/pieces-ml-assets/1.14.2-pieces-no-nsync.tar.gz"
+#    sha256: "f998352b131bb89fa7dd1f1d87ddbafe647dfaddd11929b6b5168b3f4ef857de"
 patches:
-  "1.14.1":
+  "1.14.2":
     - patch_file: "patches/1.14.1-0001-cmake-dependencies.patch"
       patch_description: "CMake: ensure conan dependencies are used (upstreamed future versions)"
       patch_type: "conan"
@@ -11,6 +11,9 @@ patches:
     - patch_file: "patches/1.14.1-0002-cmake-dependencies.patch"
       patch_description: "CMake: ensure conan dependencies are used"
       patch_type: "conan"
+#    - patch_file: "patches/1.14.1-0002-cmake-dependencies-pieces.patch"
+#      patch_description: "CMake: ensure conan dependencies are used"
+#      patch_type: "conan"
     - patch_file: "patches/1.14.1-0003-amx-gas-version.patch"
       patch_description: "Check GNU AS supports AMX before enabling it"
       patch_type: "portability"
