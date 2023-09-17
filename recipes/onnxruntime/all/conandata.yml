@@ -1,8 +1,7 @@
 sources:
   "1.14.1":
-    url: "https://storage.googleapis.com/pieces-ml-assets/onnxruntime-1.14.1.tar.gz"
-#    url: "https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.14.1.tar.gz"
-#    sha256: "f998352b131bb89fa7dd1f1d87ddbafe647dfaddd11929b6b5168b3f4ef857de"
+    url: "https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.14.1.tar.gz"
+    sha256: "f998352b131bb89fa7dd1f1d87ddbafe647dfaddd11929b6b5168b3f4ef857de"
 patches:
   "1.14.1":
     - patch_file: "patches/1.14.1-0001-cmake-dependencies.patch"
