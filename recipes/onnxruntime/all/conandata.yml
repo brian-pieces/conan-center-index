@@ -1,7 +1,6 @@
 sources:
   "1.16.3":
-    url: "https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.16.3.tar.gz"
-    sha256: "d26b8a7eed1df4440aa3d8eac5049980cbe585514ccedfda809712051a4b1721"
+    url: "https://github.com/open-runtime/onnxruntime/archive/refs/tags/v1.16.3.tar.gz"
   "1.16.2":
     url: "https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.16.2.tar.gz"
     sha256: "609a9d31fd9445eb2e737cbb6420100fa7d4e1180b594c1a62505b26f730bfd5"

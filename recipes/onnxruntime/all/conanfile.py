@@ -85,7 +85,7 @@ class OnnxRuntimeConan(ConanFile):
         self.requires("protobuf/3.21.12")
         self.requires("date/3.0.1")
         self.requires("re2/20230901")
-        self.requires(f"onnx/{self._onnx_version}")
+        self.requires(f"onnx/{self._onnx_version}@admin/stable")
         self.requires("flatbuffers/1.12.0")
         self.requires("boost/1.83.0", headers=True, libs=False, run=False)  # for mp11, header only, no need for libraries to link/run
         self.requires("safeint/3.0.28")
